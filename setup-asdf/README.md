@@ -1,78 +1,39 @@
-# Set up asdf action
+# Example action
+<!-- TODO: Update above title to <name> action -->
 
-Set up asdf and install tools based on .tool-versions file
+<!-- TODO: Update below description -->
+The example action for doing nothing.
 
 ## Usage
 
+<!-- TODO: Update below example configuration -->
 ```yaml
 jobs:
   job:
     runs-on: ubuntu-latest
     steps:
-      - uses: cognius/github-actions/setup-asdf@v3
+      - uses: kc-workspace/github-actions/example-ts@v1
         with:
-          # ref: v0.13.1
-          # tool-install: false
-          # workdir: /
-          # cache-disabled: false
-          # cache-key: v1
+          # name: example
           # dryrun: true
 ```
 
 ## Configurations
 
-A parsed input send to actions. You have 2 options to configure a value:
+The configurations can be sent to the action in 2 ways:
+[Environment variables][gha-env-url] or [Input][gha-input-url]
+(The environment will always has priority over `with` fields).
 
-1. using [with][steps-with-url] field. (This should be `kebab-case`)
-2. using [env][steps-env-url] field. (This should be `UPPER_CASE` and prefix with application name and `__`)
-   - Example: `EXAMPLE_TS__NAME`
+[gha-env-url]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsenv
+[gha-input-url]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepswith
 
-[steps-with-url]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepswith
-[steps-env-url]: https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsenv
+### Name
 
-### Reference
-
-`ref` is a reference of asdf repository (default is **master**).
+`name` is a printing name (default is **example**).
 
 | Input | Environment | Alternative Environment |
 | ----- | ----------- | ----------------------- |
-| ref   | REF         | SETUP_ASDF\_\_REF       |
-
-### Tool install mode
-
-`tool-install` is a boolean flag to install tools listed
-on .tool-versions file (default is **false**).
-
-| Input        | Environment  | Alternative Environment    |
-| ------------ | ------------ | -------------------------- |
-| tool-install | TOOL_INSTALL | SETUP_ASDF\_\_TOOL_INSTALL |
-
-### Work directory
-
-`workdir` is a current working directory,
-this also use to resolve .tool-versions file when
-you enabled [tool-install](#tool-install-mode) mode (default is **$PWD**).
-
-| Input   | Environment | Alternative Environment |
-| ------- | ----------- | ----------------------- |
-| workdir | WORKDIR     | SETUP_ASDF\_\_WORKDIR   |
-
-### Cache disabled
-
-`cache-disabled` is a boolean flag to disabled caching on GitHub Action
-(default is **false**).
-
-| Input          | Environment    | Alternative Environment      |
-| -------------- | -------------- | ---------------------------- |
-| cache-disabled | CACHE_DISABLED | SETUP_ASDF\_\_CACHE_DISABLED |
-
-### Cache key
-
-`cache-key` is a optional key for resolving cache in Github Action.
-
-| Input     | Environment | Alternative Environment |
-| --------- | ----------- | ----------------------- |
-| cache-key | CACHE_KEY   | SETUP_ASDF\_\_CACHE_KEY |
+| name  | NAME        | EXAMPLE_TS\_\_NAME      |
 
 ### Dryrun
 
@@ -80,12 +41,12 @@ you enabled [tool-install](#tool-install-mode) mode (default is **$PWD**).
 
 | Input  | Environment | Alternative Environment |
 | ------ | ----------- | ----------------------- |
-| dryrun | DRYRUN      | SETUP_ASDF\_\_DRYRUN    |
+| dryrun | DRYRUN      | EXAMPLE_TS\_\_DRYRUN    |
 
 ## Source code
 
-> [github-actions-private#action/setup-asdf][source-code-url]
+<!-- TODO: Update below action name -->
+> [github-actions-src#action/example-ts][gha-src-url]
 
-If you cannot open source code, meaning you don't have permission to open it.
-
-[source-code-url]: https://github.com/cognius/github-actions-private/tree/main/actions/src/setup-asdf
+<!-- TODO: Update below action directory -->
+[gha-src-url]: https://github.com/kc-workspace/github-actions-src/tree/main/actions/example-ts
